@@ -81,11 +81,6 @@ class Home extends Component {
               {Math.trunc((ts - item.time)/60)} {Math.trunc((ts - item.time)/60) > 1 ? <span>minutes</span> : <span>minute</span>} ago
             </Typography>
           </CardContent>
-          <CardActions>
-            <a href={item.url} target='_blank'>
-            <Button size="small">Read More</Button>
-            </a>
-          </CardActions>
         </Card>
       })}
       </div>

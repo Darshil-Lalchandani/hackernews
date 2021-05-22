@@ -10,6 +10,7 @@ body {
 }
 .title {
   color: #262223;
+  font-weight: 600 !important;
 }
 .nav-link, .login {
   color: white !important;
