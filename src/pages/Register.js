@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -82,10 +82,6 @@ export default function SignIn() {
             id="password"
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             type="submit"
             fullWidth
@@ -96,13 +92,8 @@ export default function SignIn() {
             Register
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/submit" variant="body2">
                 {"Already have an account? Log In"}
               </Link>
             </Grid>
@@ -114,40 +105,4 @@ export default function SignIn() {
       </Box>
     </Container>
   );
-}*/
-import React from 'react'
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import './register.css'
-
-const Register = () => {
-  return (
-    <div>
-    <Form>
-      <Container>
-        <Row xs={4} md={4} lg={3}>
-          <Form.Group controlId="formGroupEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-          </Form.Group>
-        </Row>
-        <Row xs={4} md={4} lg={3}>
-          <Form.Group controlId="formGroupPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-        </Row>
-        <Row>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Row>
-      </Container>
-    </Form>
-</div>
-  )
 }
-
-export default Register

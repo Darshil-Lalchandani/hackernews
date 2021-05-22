@@ -1,0 +1,24 @@
+body {
+  background-color: whitesmoke;
+  padding-top: 70px;
+}
+.card {
+  max-width: 80vw;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #E7E4F2 !important;
+}
+.title {
+  color: #262223;
+}
+.nav-link, .login {
+  color: white !important;
+}
+.login {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+}
+.navbar {
+  background-color: #575757 !important;
+}
