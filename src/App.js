@@ -9,6 +9,7 @@ import Jobs from './pages/Jobs'
 import Past from './pages/Past'
 import Comments from './pages/Comments'
 import Login from './pages/Login'
+import Register from './pages/Register'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -31,8 +32,14 @@ function App() {
       <Route exact path = "/jobs">
         <Jobs />
       </Route>
+      <Route exact path = "/newcomments">
+        <Comments />
+      </Route>
       <Route exact path = "/submit">
         <Login />
+      </Route>
+      <Route exact path = "/register">
+        <Register />
       </Route>
     </Switch>
     </div>
