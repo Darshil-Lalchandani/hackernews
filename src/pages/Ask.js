@@ -4,29 +4,29 @@ class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
-      topStoriesArr: [],
+      askStoriesArr: [],
     }
   }
   componentDidMount() {
-    fetch('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
+    fetch('https://hacker-news.firebaseio.com/v0/askstories.json?print=pretty')
       .then(response => response.json())
       .then(response => {
         const arr = [...response];
         this.setState((prevState) => {
           return {
-            topStoriesArr: arr
+            askStoriesArr: arr
           }
         })
       })
       .then(response => {
-        let stories = this.state.topStoriesArr.slice(0, 30)
+        let stories = this.state.askStoriesArr.slice(0, 30)
         let arrStories = []
         stories = stories.map(item => {
           fetch(`https://hacker-news.firebaseio.com/v0/item/${item}.json?print=pretty`)
             .then(response => response.json())
             .then(response => arrStories.push(response))
             .then(response => this.setState({
-              topStoriesArr: arrStories
+              askStoriesArr: arrStories
             }))
             .then(response => console.log(this.state))
         })
@@ -34,7 +34,7 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>{this.state.topStoriesArr.map(item => <div> {item.title} </div>)}</div>
+      <div>{this.state.askStoriesArr.map(item => <div> Ask HN {item.title} </div>)}</div>
     )
   }
 }
