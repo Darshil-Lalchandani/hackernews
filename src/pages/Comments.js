@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Parser from 'html-react-parser/dist/html-react-parser'
 
 const useStyles = withStyles({
   root: {
@@ -72,7 +73,7 @@ class Home extends Component {
           <CardContent>
             <Typography className='title' gutterBottom>
               {/*`${index+1}. ${item.text}`*/}
-              {item.text}
+              {Parser(`${item.text}`)}
             </Typography>
             <Typography>
               By: {item.by}
