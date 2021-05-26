@@ -1,45 +1,51 @@
 import React, { Component } from 'react'
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const useStyles = withStyles({
+const useStyles = makeStyles({
   root: {
     minWidth: 275,
-  },
-  title: {
-    fontSize: 14,
   },
   pos: {
     marginBottom: 12,
   },
+  card: {
+    maxWidth: '80vw',
+    margin: 'auto',
+    marginBottom: '10px',
+    backgroundColor: '#E7E4F2',
+  },
+  title: {
+    color: '#262223',
+    fontWeight: 600,
+    fontSize: 14,
+  }
 });
 
-class CardComponent extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render(){
-    const { classes } = this.props;
+function CardComponent(props) {
+    const classes = useStyles();
     var ts = Math.round((new Date()).getTime() / 1000)
     return (
       <div>
-        {this.props.Arr.map((item, index) => {
-        return <Card className='card'>
+        {props.Arr.map((item, index) => {
+        return <Card className={classes.card}>
           <CardContent>
-            <Typography className='title' gutterBottom>
+            <Typography className={classes.title} gutterBottom>
               {`${index+1}. ${item.title}`}
             </Typography>
             <Typography>
               By: {item.by}
             </Typography>
             <Typography variant="body2" component="p">
-              Points: {item.score}
-              <br />
-              {this.props.comments && <div> Comments: {item.descendants}
+              {props.points && <div> Points: {item.score}
+                <br />
+                </div>
+              }
+              {props.comments && <div> Comments: {item.descendants}
                 <br />
                 </div>
               }
@@ -61,6 +67,5 @@ class CardComponent extends Component {
       })}
       </div>
     )
-  }
 }
 export default CardComponent;
